@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Vin blanc",
+        "category": "blanc",
+        "url": "vin-blanc"
+    },
+    {
+        "id": 2,
+        "name": "Vin rouge",
+        "category": "rouge",
+        "url": "vin-rouge"
+    },
+    {
+        "id": 3,
+        "name": "Rosé",
+        "category": "rose",
+        "url": "rose"
+    }
+]
