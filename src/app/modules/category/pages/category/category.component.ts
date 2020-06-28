@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { Wine } from 'src/app/core/models/wine';
 
 @Component({
   selector: 'wine-category',
@@ -6,10 +12,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent implements OnInit {
+  public category$: Observable<Wine[]>;
 
-  constructor() { }
+  constructor(
+    private activatedRoute: ActivatedRoute
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    console.log('test');
+    console.log(this.activatedRoute.snapshot.data);
   }
 
 }

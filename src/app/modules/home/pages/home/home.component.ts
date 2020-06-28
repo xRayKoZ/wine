@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { WineService } from './../../../../core/services/wine/wine.service';
+
+import { Wine } from 'src/app/core/models/wine';
 
 @Component({
   selector: 'wine-home',
@@ -8,14 +11,14 @@ import { WineService } from './../../../../core/services/wine/wine.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  public wineList$: Observable<Wine[]>;
 
   constructor(
     private wineService: WineService
   ) { }
 
   ngOnInit(): void {
-    this.wineService.getAll().subscribe(res => console.log(typeof res));
-    this.wineService.getByUrl('vin-blanc').subscribe(res => console.log(res));
+    this.wineList$ = this.wineService.getAll();
   }
 
 }

@@ -1,1 +1,5 @@
 <p>category works!</p>
+<div *ngIf="category$ | async as wineList;">
+    {{ wineList | json }}
+</div>
+<wine-card></wine-card>
