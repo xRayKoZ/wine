@@ -23,19 +23,31 @@ export class WineService {
 
   public getByUrl(url: string): Observable<Wine> {
     return this.http.get<Wine[]>(this.jsonUrl).pipe(
-      map((res: Array<Wine>) => {
-        return res.find(r => r.url === url);
+      map((res: Wine[]) => {
+        return res.find((wines: Wine) => {
+          return wines.url === url;
+        });
       })
     );
   }
 
   public getByCategory(category: string): Observable<Wine[]> {
     return this.http.get<Wine[]>(this.jsonUrl).pipe(
-      map((res: Array<Wine>) => {
-        return res.filter(r => r.category === category);
+      map((res: Wine[]) => {
+        return res.filter((wines: Wine) => {
+          return wines.category === category;
+        });
       })
     );
   }
 
-  public searchWine(name: string) { }
+  public searchWine(name: string): Observable<Wine[]> {
+    return this.http.get<Wine[]>(this.jsonUrl).pipe(
+      map((res: Wine[]) => {
+        return res.filter((wines: Wine) => {
+          return wines.name.toLowerCase().indexOf(name.toLowerCase()) !== -1 ? wines : null;
+        });
+      })
+    )
+  }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Wine } from 'src/app/core/models/wine';
 
 @Component({
   selector: 'wine-card',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wine-card.component.scss']
 })
 export class WineCardComponent implements OnInit {
+  @Input() wineList: Wine[];
 
   constructor() { }
 

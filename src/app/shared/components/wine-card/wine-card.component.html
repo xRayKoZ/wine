@@ -1,1 +1,7 @@
-<p>wine-card works!</p>
+<article *ngFor="let wine of wineList">
+    <a [routerLink]="['/vin', wine.url]" title="Voir les détails sur : {{ wine.name }}">
+        <header>
+            <h1>{{ wine.name }}</h1>
+        </header>
+    </a>
+</article>

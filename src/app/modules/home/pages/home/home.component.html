@@ -1,1 +1,7 @@
-<wine-card></wine-card>
+<ng-container *ngIf="wineList$ | async as wineList; else loader;">
+    <wine-card [wineList]="wineList"></wine-card>
+</ng-container>
+
+<ng-template #loader>
+    <h2>Chargement...</h2>
+</ng-template>

@@ -18,11 +18,7 @@ export class CategoryResolver implements Resolve<Observable<Wine[]>> {
     private wineService: WineService
   ) { }
 
-  resolve(activatedRoute: ActivatedRouteSnapshot) {
+  resolve(activatedRoute: ActivatedRouteSnapshot): Observable<Wine[]> {
     return this.wineService.getByCategory(activatedRoute.params.cat);
   }
-
-  /* return activatedRoute.paramMap.pipe(
-    switchMap((params: ParamMap) => this.wineService.getByCategory(params.get('cat')))
-  ); */
 }

@@ -1,5 +1,3 @@
-<p>category works!</p>
-<div *ngIf="category$ | async as wineList;">
-    {{ wineList | json }}
-</div>
-<wine-card></wine-card>
+<ng-container *ngIf="wineCategoryList;">
+    <wine-card [wineList]="wineCategoryList"></wine-card>
+</ng-container>
