@@ -9,12 +9,16 @@ import { AppComponent } from './app.component';
 import { ContainerComponent } from './layout/container/container.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { WineCardComponent } from './shared/components/wine-card/wine-card.component';
+import { NavComponent } from './layout/nav/nav.component';
+import { SearchComponent } from './layout/search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContainerComponent,
-    HeaderComponent
+    HeaderComponent,
+    NavComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,7 @@
-{{ wineDetail.name }}
+<ng-container *ngIf="wineDetail$ | async as wineDetail; else loader;">
+    {{ wineDetail.name }}
+</ng-container>
+
+<ng-template #loader>
+    <wine-loader></wine-loader>
+</ng-template>

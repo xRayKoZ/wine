@@ -1,0 +1,8 @@
+<input (keyup)="search($event.target.value)" placeholder="rechercher" type="search" />
+<ng-container *ngIf="resultSearch$ | async as resultSearch">
+    <div *ngIf="resultSearch.length > 0">
+        <a *ngFor="let result of resultSearch" [routerLink]="['/vin/', result.url]">
+            {{ result.name }}
+        </a>
+    </div>
+</ng-container>
